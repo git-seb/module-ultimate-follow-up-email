@@ -171,7 +171,7 @@ class AbandonedCart extends UltimateFollowupEmail
             'item' => $item,
             'itemProduct' => $product,
             'quote' => $item->getQuote(),
-            'item_price' => number_format($item->getPrice(),2).' '.$currencyCode,
+            'item_price' => number_format($item->getPriceInclTax(),2).' '.$currencyCode,
             'product_image_url' => $productImageUrl
         ];
         return $this->getTemplateContent(self::XML_PATH_FUE_ABC_ITEM, $var);
